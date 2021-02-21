@@ -5,9 +5,10 @@ public class App {
     {
         System.out.println("Hello world!");
     }
-    public static void DefineArray()
+    public static String[] DefineArray()
     {
         String[] languages = {"C", "C++", "C#", "Python", "Go", "Rust", "JavaScript", "PHP", "Swift", "Java"};
+        return languages;
     }
     public static int GenerateInt()
     {
@@ -23,13 +24,26 @@ public class App {
         n=n+Integer.parseInt(hexdecStr, 16);
         n=n*6;
     }
+    public static int AddDigits(int n)
+    {
+        if (n==0)
+            return 0;
+        else if(n%9==0)
+            return 9;
+        else return (n%9);
+    }
     public static void main(String args[])
     {
         int n;
+        int i;
+        String[] languages={};
         PrintMessage();
-        DefineArray();
+        languages=DefineArray();
         n=GenerateInt();
         Modify(n);
         System.out.println(n);
+        i=AddDigits(n);
+        System.out.println(i);
+        System.out.printf("Willy-nilly, this semester I will learn %s", languages[i]);
     }
 }
